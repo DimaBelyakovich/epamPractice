@@ -1,0 +1,6 @@
+Milk-300-234
+Meat-1000-543
+Coffee-700-50
+Spaghetti-100-200
+Cheese-900-213
+Mars-90-754

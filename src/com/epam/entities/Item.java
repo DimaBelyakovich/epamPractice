@@ -60,7 +60,7 @@ public class Item {
                 .add("name='" + name + "'")
                 .add("price=" + price)
                 .add("count=" + count)
-                .add("stores=" + stores)
+                .add("stores=" + stores.size())
                 .toString();
     }
 }

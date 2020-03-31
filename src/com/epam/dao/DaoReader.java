@@ -9,11 +9,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class DaoReader {
     static Logger logger = LogManager.getLogger();
-    public static void readItems(ArrayList<Item> items, ArrayList<Store> stores){
+    public static void readItems(ArrayList<Item> items){
         ////////////////////
         try(BufferedReader reader = new BufferedReader(new FileReader("data/Items.txt"))){
             String buffer;
@@ -27,9 +29,10 @@ public class DaoReader {
         }catch (IOException e){
             logger.error(e);
         }
-        /////////////////////
+    }
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("data/Stors.txt"))){
+    public static void readStores(ArrayList<Store> stores, ArrayList<Item> items){
+        try (BufferedReader reader = new BufferedReader(new FileReader("data/Store.txt"))){
             String buffer;
             while((buffer = reader.readLine()) != null){
                 Store store = new Store();
@@ -58,3 +61,5 @@ public class DaoReader {
         }
     }
 }
+
+

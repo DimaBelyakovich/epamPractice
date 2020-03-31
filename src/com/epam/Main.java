@@ -6,12 +6,7 @@ import com.epam.entities.Store;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 public class Main {
     static Logger logger = LogManager.getLogger();
@@ -19,9 +14,18 @@ public class Main {
         ArrayList<Item> items = new ArrayList<>();
         ArrayList<Store> stores = new ArrayList<>();
 
-        DaoReader.readItems(items,stores);
+        DaoReader.readItems(items);
+        DaoReader.readStores(stores,items);
+
+        logger.error(new Error());
+
+
         items.forEach(item -> {
             System.out.println(item);
+        });
+
+        stores.forEach(store -> {
+            System.out.println(store);
         });
     }
 }

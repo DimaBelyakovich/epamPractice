@@ -54,7 +54,7 @@ public class Store {
     public String toString() {
         return new StringJoiner(", ", Store.class.getSimpleName() + "[", "]")
                 .add("name='" + name + "'")
-                .add("items=" + items)
+                .add("items=" + items.size())
                 .add("feedbackList=" + feedbackList)
                 .toString();
     }

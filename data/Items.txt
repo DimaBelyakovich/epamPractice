@@ -4,3 +4,4 @@ Coffee-700-50
 Spaghetti-100-200
 Cheese-900-213
 Mars-90-754
+Tea-100-456

@@ -49,7 +49,6 @@ public class DaoReader {
                             item = tmpItem;
                             item.setStores(store);
                             store.setItems(item);
-                            break;
                         }
                     }
                 }

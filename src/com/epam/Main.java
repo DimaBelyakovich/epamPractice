@@ -3,10 +3,15 @@ package com.epam;
 import com.epam.dao.DaoReader;
 import com.epam.entities.Item;
 import com.epam.entities.Store;
+import com.epam.services.Sorting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main {
     static Logger logger = LogManager.getLogger();
@@ -17,15 +22,23 @@ public class Main {
         DaoReader.readItems(items);
         DaoReader.readStores(stores,items);
 
-        logger.error(new Error());
+        Supplier<Stream<Item>> itemSupply = items::stream;
 
+        System.out.println(Sorting.overFive(itemSupply));
 
-        items.forEach(item -> {
-            System.out.println(item);
-        });
+        System.out.println(Sorting.maxCount(itemSupply));
 
-        stores.forEach(store -> {
-            System.out.println(store);
-        });
+        System.out.println(Sorting.minCount(itemSupply));
+
+        System.out.println(Sorting.oneStore(itemSupply));
+
+        System.out.println(Sorting.sortPrice(itemSupply));
+
+        System.out.println(Sorting.getStores(itemSupply));
+
     }
 }
+/*
+− Напечатать информацию о магазинах, используя foreach
+− Получить список магазинов без дубликатов
+*/

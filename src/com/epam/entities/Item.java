@@ -1,5 +1,6 @@
 package com.epam.entities;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.StringJoiner;
@@ -8,18 +9,18 @@ public class Item {
     private String name;
     private Integer price;
     private Integer count;
-    private List<Store> stores;
+    private ArrayList<Store> stores;
 
     public Item() {
         super();
-        this.stores = new LinkedList<>();
+        this.stores = new ArrayList<>();
     }
 
     public Item(String name, Integer price, Integer count) {
         this.name = name;
         this.price = price;
         this.count = count;
-        this.stores = new LinkedList<>();
+        this.stores = new ArrayList<>();
     }
 
     public String getName() {
@@ -46,7 +47,7 @@ public class Item {
         this.count = count;
     }
 
-    public List<Store> getStores() {
+    public ArrayList<Store> getStores() {
         return stores;
     }
 

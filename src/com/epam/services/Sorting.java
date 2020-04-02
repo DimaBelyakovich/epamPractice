@@ -5,7 +5,6 @@ import com.epam.entities.Store;
 
 import java.util.*;
 import java.util.function.Supplier;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -41,8 +40,21 @@ public class Sorting {
         return priceItems;
     }
 
-    public static List<Store> getStores(Supplier<Stream<Item>> itemSupply){
-        List stores = itemSupply.get().map(item->item.getStores()).collect(Collectors.toCollection(()->new LinkedList<>()));
-        return stores;
+    public static ArrayList<Store> getStores(Supplier<Stream<Item>> itemSupply){
+        List<Store> stores = new ArrayList<>();
+        itemSupply.get().forEach(item->{
+            for (int i = 0; i < item.getStores().size(); i++) {
+                stores.add(item.getStores().get(i));
+            }
+        });
+        return (ArrayList<Store>) stores;
+    }
+
+    public static ArrayList<Store> getDistinctStores(Supplier<Stream<Item>> itemSupply){
+        Stream<Store> storeStream = getStores(itemSupply).stream();
+        List<Store> distinctStore = new ArrayList<>();
+        storeStream.distinct().forEach(store -> distinctStore.add(store));
+        storeStream.close();
+        return (ArrayList<Store>)distinctStore;
     }
 }

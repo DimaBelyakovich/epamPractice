@@ -33,12 +33,9 @@ public class Main {
         System.out.println(Sorting.oneStore(itemSupply));
 
         System.out.println(Sorting.sortPrice(itemSupply));
-
-        System.out.println(Sorting.getStores(itemSupply));
-
+        System.out.println("----------------------------");
+        Sorting.getStores(itemSupply).forEach(store-> System.out.println(store));
+        System.out.println("----------------------------");
+        Sorting.getDistinctStores(itemSupply).forEach(store -> System.out.println(store));
     }
 }
-/*
-− Напечатать информацию о магазинах, используя foreach
-− Получить список магазинов без дубликатов
-*/

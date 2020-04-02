@@ -1,8 +1,6 @@
 package com.epam.entities;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.StringJoiner;
 
 public class Item {
